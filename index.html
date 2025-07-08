@@ -14,14 +14,8 @@
 
     <style>
       [data-theme='dark'] {
-        --tw-bg-opacity: 1;
-        --tw-text-opacity: 1;
-        background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
-        color: rgba(255, 255, 255, var(--tw-text-opacity));
-      }
-
-      .dark a {
-        color: #93c5fd;
+        background-color: #0f172a;
+        color: #ffffff;
       }
     </style>
   </head>
@@ -30,26 +24,30 @@
 
     <!-- Dark Mode Toggle -->
     <div class="flex justify-end p-4">
-      <button id="toggleDark" class="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-2 rounded-full shadow hover:scale-105 transition">
+      <button id="toggleDark"
+        class="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-2 rounded-full shadow hover:scale-105 transition"
+        aria-label="Toggle Dark Mode">
         Toggle Dark Mode
       </button>
     </div>
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-blue-50 to-purple-100 dark:from-slate-800 dark:to-slate-900">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4" data-aos="fade-up">Track Your Habits.Change Your Life.</h1>
-      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight" data-aos="fade-up">
+        Track Your Habits.<br class="md:hidden" /> Change Your Life.
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-xl" data-aos="fade-up" data-aos-delay="100">
         A simple habit tracker that helps you stay consistent and finally build the routines you want.
       </p>
       <a href="https://chat.whatsapp.com/EIe7iFaf5EvAGwHCGmJddp?mode=ac_t" target="_blank"
-        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition duration-300"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition-transform duration-300 hover:scale-105"
         data-aos="zoom-in" data-aos-delay="200">
         Get Early Access
       </a>
     </section>
 
     <!-- Problem Section -->
-    <section class="py-20 px-6 text-center">
+    <section class="py-16 px-6 text-center">
       <div class="max-w-3xl mx-auto" data-aos="fade-up">
         <h2 class="text-3xl font-semibold mb-4">The Problem</h2>
         <p class="text-lg text-gray-700 dark:text-gray-300">
@@ -60,10 +58,10 @@
     </section>
 
     <!-- How It Works -->
-    <section class="bg-gray-100 dark:bg-slate-800 py-20 px-6">
+    <section class="bg-gray-100 dark:bg-slate-800 py-20 px-4 sm:px-6">
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl font-semibold mb-10" data-aos="fade-up">How It Works</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div class="bg-white dark:bg-slate-700 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
             <h3 class="text-lg font-bold mb-2">1️⃣ Log your habits daily</h3>
             <p class="text-gray-700 dark:text-gray-300">Quickly mark habits as done or missed. No clunky menus.</p>
@@ -81,7 +79,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-20 px-6 text-center">
+    <section class="py-16 px-6 text-center">
       <div class="max-w-3xl mx-auto" data-aos="fade-up">
         <h2 class="text-3xl font-semibold mb-6">Why You’ll Love It</h2>
         <ul class="space-y-4 text-left text-lg text-gray-800 dark:text-gray-200 mx-auto max-w-md">
@@ -96,7 +94,7 @@
     <section class="bg-blue-50 dark:bg-slate-900 py-20 px-6 text-center">
       <h2 class="text-3xl font-semibold mb-4" data-aos="fade-up">Ready to build better habits?</h2>
       <a href="https://chat.whatsapp.com/EIe7iFaf5EvAGwHCGmJddp?mode=ac_t" target="_blank"
-        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition duration-300"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
         data-aos="zoom-in" data-aos-delay="100">
         Reserve Your Spot
       </a>
@@ -105,8 +103,8 @@
 
     <!-- Footer -->
     <footer class="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t dark:border-gray-700">
-      <a href="#" class="mx-3 hover:text-blue-600">About</a>|
-      <a href="#" class="mx-3 hover:text-blue-600">Privacy</a>|
+      <a href="#" class="mx-3 hover:text-blue-600">About</a> |
+      <a href="#" class="mx-3 hover:text-blue-600">Privacy</a> |
       <a href="mailto:mydailyresolve.app@gmail.com" class="mx-3 hover:text-blue-600">Contact Us</a>
     </footer>
 
@@ -115,8 +113,13 @@
       AOS.init();
 
       const toggleBtn = document.getElementById("toggleDark");
+      const prefersDark = localStorage.getItem("dark-mode") === "true";
+
+      if (prefersDark) document.body.classList.add("dark");
+
       toggleBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark");
+        localStorage.setItem("dark-mode", document.body.classList.contains("dark"));
       });
     </script>
   </body>

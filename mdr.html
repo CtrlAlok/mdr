@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temptation – Habit Tracker</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+      [data-theme='dark'] {
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+        background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
+        color: rgba(255, 255, 255, var(--tw-text-opacity));
+      }
+
+      .dark a {
+        color: #93c5fd;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800 dark:bg-slate-900 dark:text-white transition duration-500">
+
+    <!-- Dark Mode Toggle -->
+    <div class="flex justify-end p-4">
+      <button id="toggleDark" class="bg-gray-200 dark:bg-gray-700 text-sm px-4 py-2 rounded-full shadow hover:scale-105 transition">
+        Toggle Dark Mode
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-blue-50 to-purple-100 dark:from-slate-800 dark:to-slate-900">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4" data-aos="fade-up">Track Your Habits. Change Your Life.</h1>
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+        A simple habit tracker that helps you stay consistent and finally build the routines you want.
+      </p>
+      <a href="https://chat.whatsapp.com/EIe7iFaf5EvAGwHCGmJddp?mode=ac_t" target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition duration-300"
+        data-aos="zoom-in" data-aos-delay="200">
+        Get Early Access
+      </a>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 px-6 text-center">
+      <div class="max-w-3xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-4">The Problem</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300">
+          Most habit apps are either too complicated or too basic.<br />
+          <strong>Temptation</strong> makes tracking effortless, so you can focus on progress—not perfection.
+        </p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-gray-100 dark:bg-slate-800 py-20 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-10" data-aos="fade-up">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-slate-700 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-lg font-bold mb-2">1️⃣ Log your habits daily</h3>
+            <p class="text-gray-700 dark:text-gray-300">Quickly mark habits as done or missed. No clunky menus.</p>
+          </div>
+          <div class="bg-white dark:bg-slate-700 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-lg font-bold mb-2">2️⃣ Visualize progress</h3>
+            <p class="text-gray-700 dark:text-gray-300">See your streaks, trends, and improvements over time.</p>
+          </div>
+          <div class="bg-white dark:bg-slate-700 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-lg font-bold mb-2">3️⃣ Build consistency</h3>
+            <p class="text-gray-700 dark:text-gray-300">Stay motivated with reminders and milestone rewards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-6 text-center">
+      <div class="max-w-3xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-6">Why You’ll Love It</h2>
+        <ul class="space-y-4 text-left text-lg text-gray-800 dark:text-gray-200 mx-auto max-w-md">
+          <li class="flex items-start gap-2"><span>✅</span> <span>Stay Accountable – Track every small win</span></li>
+          <li class="flex items-start gap-2"><span>✅</span> <span>Build Momentum – Progress that feels rewarding</span></li>
+          <li class="flex items-start gap-2"><span>✅</span> <span>Keep It Simple – No distractions or feature bloat</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-50 dark:bg-slate-900 py-20 px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-4" data-aos="fade-up">Ready to build better habits?</h2>
+      <a href="https://chat.whatsapp.com/EIe7iFaf5EvAGwHCGmJddp?mode=ac_t" target="_blank"
+        class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium px-6 py-3 rounded-full shadow-lg transition duration-300"
+        data-aos="zoom-in" data-aos-delay="100">
+        Reserve Your Spot
+      </a>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">(No spam. Early access invites only.)</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t dark:border-gray-700">
+      <a href="#" class="mx-3 hover:text-blue-600">About</a>|
+      <a href="#" class="mx-3 hover:text-blue-600">Privacy</a>|
+      <a href="mailto:mydailyresolve.app@gmail.com" class="mx-3 hover:text-blue-600">Contact Us</a>
+    </footer>
+
+    <!-- JS: AOS Init + Dark Mode -->
+    <script>
+      AOS.init();
+
+      const toggleBtn = document.getElementById("toggleDark");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
